@@ -34,6 +34,8 @@ import VerticalScrollbar from './vertical-scrollbar';
 import HorizontalScrollbar from './horizontal-scrollbar';
 
 export default {
+  name: 'VueScrollbar',
+
   props: {
     step: {
       type: Number,

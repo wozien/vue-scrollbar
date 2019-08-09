@@ -16,7 +16,7 @@ const publishConfig = merge(webpackConfig, {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'VueImagePreview',
+    library: 'VueScrollbar',
     libraryTarget: 'umd' // 打包的格式
   },
 
