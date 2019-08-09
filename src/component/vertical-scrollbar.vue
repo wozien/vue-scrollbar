@@ -89,7 +89,6 @@ export default {
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.3);
     cursor: default;
-    // transition: all 0.5s ease;
   }
 }
 </style>
