@@ -79,13 +79,13 @@ export default {
 <style lang="scss" scoped>
 .horizontal-scrollbar {
   position: absolute;
-  height: 8px;
+  height: 7px;
   width: 100%;
   left: 0;
   bottom: 1;
   .thumb {
     position: relative;
-    height: 7px;
+    height: 6px;
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.4);
     cursor: default;

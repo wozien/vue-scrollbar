@@ -79,15 +79,15 @@ export default {
 <style lang="scss" scoped>
 .vertical-scrollbar {
   position: absolute;
-  width: 7px;
+  width: 6px;
   height: 100%;
   top: 0;
   right: 1;
   .thumb {
     position: relative;
-    width: 6px;
+    width: 5px;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     cursor: default;
     // transition: all 0.5s ease;
   }

@@ -197,7 +197,9 @@ export default {
     },
 
     scrollTop() {
-      this.scrollY(0);
+      this.calSize(() => {
+        this.scrollY(0);
+      });
     },
 
     scrollBottom() {
@@ -207,7 +209,9 @@ export default {
     },
 
     scrollLeft() {
-      this.scrollX(0);
+      this.calSize(() => {
+        this.scrollX(0);
+      });
     },
 
     scrollRight() {
