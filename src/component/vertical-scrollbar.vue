@@ -82,7 +82,7 @@ export default {
   width: 6px;
   height: 100%;
   top: 0;
-  right: 1;
+  right: 1px;
   .thumb {
     position: relative;
     width: 5px;

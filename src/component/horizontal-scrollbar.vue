@@ -1,6 +1,10 @@
 <template>
   <div class="horizontal-scrollbar" v-if="width < 100">
-    <div class="thumb" :style="{ width: width + '%', left: scrolling + '%' }" @mousedown="startDrag"></div>
+    <div
+      class="thumb"
+      :style="{ width: width + '%', left: scrolling + '%' }"
+      @mousedown="startDrag"
+    ></div>
   </div>
 </template>
 
@@ -82,7 +86,7 @@ export default {
   height: 7px;
   width: 100%;
   left: 0;
-  bottom: 1;
+  bottom: 1px;
   .thumb {
     position: relative;
     height: 6px;
