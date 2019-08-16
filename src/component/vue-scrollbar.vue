@@ -239,9 +239,6 @@ export default {
   position: relative;
   overflow: hidden;
   height: 100%;
-  .scroll-area {
-    user-select: text;
-  }
 }
 </style>
 
