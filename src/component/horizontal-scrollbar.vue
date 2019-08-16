@@ -1,10 +1,6 @@
 <template>
   <div class="horizontal-scrollbar" v-if="width < 100">
-    <div
-      class="thumb"
-      :style="{ width: width + '%', left: scrolling + '%' }"
-      @mousedown="startDrag"
-    ></div>
+    <div class="thumb" :style="{ width: width + '%', left: scrolling + '%' }" @mousedown="startDrag"></div>
   </div>
 </template>
 
@@ -39,17 +35,15 @@ export default {
     },
 
     startDrag(e) {
-      e.preventDefault();
       e.stopPropagation();
       this.start = e.clientX;
       this.draging = true;
     },
 
     onDrag(e) {
-      e.preventDefault();
       e.stopPropagation();
-
       if (this.draging) {
+        e.preventDefault();
         this.$emit('draging');
         const xMove = e.clientX - this.start;
         const xMovePrecent = (xMove / this.wrapper.width) * 100;

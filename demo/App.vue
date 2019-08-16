@@ -2,9 +2,13 @@
   <div id="app">
     <vue-scrollbar ref="scroll" show-type="hover">
       <div>
-        <div v-for="item in arr" :key="item" class="item">{{ item }}</div>
+        <!-- <span>aaaaaaaaaaaaaaaa</span> -->
+        <div v-for="item in arr" :key="item" class="item">
+          <span>{{ item + 'helooword' }}</span>
+        </div>
       </div>
     </vue-scrollbar>
+    <button @click="handleClick">click</button>
   </div>
 </template>
 
@@ -14,8 +18,14 @@ import VueScrollbar from '../src/index';
 export default {
   data() {
     return {
-      arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      arr: [1, 2, 3]
     };
+  },
+
+  methods: {
+    handleClick() {
+      this.$refs.scroll.scrollTop();
+    }
   },
 
   components: {

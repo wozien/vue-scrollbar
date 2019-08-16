@@ -1,6 +1,6 @@
 <template>
   <div ref="wrapper" :class="'vue-scrollbar' + (classes ? ' classes' : '')" @mouseenter="isHover = true" @mouseleave="isHover = false" @click="calSize">
-    <div class="scroll-area" ref="area" :style="{ marginTop: top * -1 + 'px', marginLeft: left * -1 + 'px' }" @wheel.prevent="scroll">
+    <div class="scroll-area" ref="area" :style="{ marginTop: top * -1 + 'px', marginLeft: left * -1 + 'px' }" @wheel="scroll">
       <slot></slot>
 
       <!-- 垂直滚动条 -->
@@ -140,7 +140,7 @@ export default {
 
     // 垂直滚动
     scrollY(next) {
-      if (next > this.maxScrollY) {
+      if (next > this.maxScrollY && this.maxScrollY > 0) {
         next = this.maxScrollY;
       } else if (next < 0) {
         next = 0;
@@ -154,7 +154,7 @@ export default {
 
     // 水平滚动
     scrollX(next) {
-      if (next > this.maxScrollX) {
+      if (next > this.maxScrollX && this.maxScrollX > 0) {
         next = this.maxScrollX;
       } else if (next < 0) {
         next = 0;
@@ -240,8 +240,7 @@ export default {
   overflow: hidden;
   height: 100%;
   .scroll-area {
-    transition: all 200ms ease;
-    -webkit-transition: all 200ms ease;
+    user-select: text;
   }
 }
 </style>

@@ -35,17 +35,15 @@ export default {
     },
 
     startDrag(e) {
-      e.preventDefault();
       e.stopPropagation();
       this.start = e.clientY;
       this.draging = true;
     },
 
     onDrag(e) {
-      e.preventDefault();
       e.stopPropagation();
-
       if (this.draging) {
+        e.preventDefault();
         this.$emit('draging');
         const yMove = e.clientY - this.start;
         const yMovePrecent = (yMove / this.wrapper.height) * 100;
