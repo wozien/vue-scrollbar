@@ -1,6 +1,6 @@
 <template>
   <div ref="wrapper" :class="'vue-scrollbar' + (classes ? ' classes' : '')" @mouseenter="isHover = true" @mouseleave="isHover = false" @click="calSize">
-    <div class="scroll-area" ref="area" :style="{ marginTop: top * -1 + 'px', marginLeft: left * -1 + 'px' }" @wheel="scroll">
+    <div class="scroll-area" ref="area" :style="{ marginTop: top * -1 + 'px', marginLeft: left * -1 + 'px' }" @mousewheel.stop.prevent="scroll">
       <slot></slot>
 
       <!-- 垂直滚动条 -->

@@ -1,6 +1,6 @@
 <template>
   <div class="vertical-scrollbar" v-if="height < 100">
-    <div class="thumb" :style="{ height: height + '%', top: scrolling + '%' }" @mousedown="startDrag"></div>
+    <div class="thumb" :style="{ height: height + '%', top: top + 'px' }" @mousedown="startDrag"></div>
   </div>
 </template>
 
@@ -13,43 +13,30 @@ export default {
     onChangePosition: Function
   },
 
-  data() {
-    return {
-      height: 0,
-      top: 0
-    };
-  },
-
-  watch: {
-    'wrapper.height'(val) {
-      this.calSize();
+  computed: {
+    top() {
+      return Math.round((this.scrolling * this.wrapper.height) / 100);
     },
-    'area.height'(val) {
-      this.calSize();
+    height() {
+      return (this.wrapper.height / this.area.height) * 100;
     }
   },
 
   methods: {
-    calSize() {
-      this.height = (this.wrapper.height / this.area.height) * 100;
-    },
-
     startDrag(e) {
-      e.stopPropagation();
       this.start = e.clientY;
       this.draging = true;
     },
 
     onDrag(e) {
-      e.stopPropagation();
       if (this.draging) {
         e.preventDefault();
-        this.$emit('draging');
         const yMove = e.clientY - this.start;
         const yMovePrecent = (yMove / this.wrapper.height) * 100;
         this.start = e.clientY;
         const next = this.scrolling + yMovePrecent;
         this.onChangePosition(next, 'vertical');
+        this.$emit('draging');
       }
     },
 
@@ -62,7 +49,6 @@ export default {
   },
 
   mounted() {
-    this.calSize();
     document.addEventListener('mousemove', this.onDrag);
     document.addEventListener('mouseup', this.stopDrag);
   },
