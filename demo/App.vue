@@ -18,7 +18,7 @@ import VueScrollbar from '../src/index';
 export default {
   data() {
     return {
-      arr: Array.from({ length: 100 }, (val, i) => i)
+      arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     };
   },
 

@@ -1,6 +1,6 @@
 {
   "name": "@wozien/vue-scrollbar",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "web scrollbar component base on vue.js",
   "main": "index.js",
   "scripts": {
